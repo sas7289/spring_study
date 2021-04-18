@@ -1,7 +1,5 @@
-
-
 <html>
 <body>
-<h2>HAHAHAHAHA</h2>
+<jsp:forward page="/products">
 </body>
 </html>
