@@ -3,6 +3,7 @@ package com.spring.config;
 import com.spring.model.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.Arrays;
 
@@ -24,6 +25,7 @@ public class ConfigApp {
     }
 
     @Bean(name = "cart")
+    @Scope("prototype")
     public ICart cart(IProductRepository repository) {
         ICart cart = new Cart();
         cart.setProductRepository(repository);

@@ -20,7 +20,8 @@ public class App {
             if(tempId < 0 || tempId > 7) {
                 System.out.println("Неверный id");
                 continue;
-            };
+            }
+
             System.out.println("0 - добавить в корзину\n1 - удалить из корзины");
             tempAction = Integer.parseInt(scanner.nextLine());
             if(tempAction != 0 && tempAction != 1) {
@@ -31,6 +32,12 @@ public class App {
                 cart.add(tempId);
             } else {
                 cart.remove(tempId);
+            }
+
+            System.out.println("Создать новую корзину? y - да, n - нет");
+            String answer = scanner.nextLine();
+            if(answer.equals("y")) {
+                cart = applicationContext.getBean("cart", ICart.class);
             }
         } while (tempId != -1);
     }
