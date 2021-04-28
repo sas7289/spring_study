@@ -4,9 +4,7 @@ import com.lesson_3.dto.Product;
 import com.lesson_3.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/addProduct")
@@ -19,4 +17,5 @@ public class ProductController {
         productService.add(product);
         return "addProd";
     }
+
 }
