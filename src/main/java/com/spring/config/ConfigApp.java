@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 @Configuration
 public class ConfigApp {
-    @Bean(name = "listOfProduct")
+    @Bean
     public IProductRepository productRepository() {
         IProductRepository productRepository = new ProductRepository();
         productRepository.setProductList(Arrays.asList(new Product(0, "Bread", 50),
@@ -24,7 +24,7 @@ public class ConfigApp {
         return productRepository;
     }
 
-    @Bean(name = "cart")
+    @Bean
     @Scope("prototype")
     public ICart cart(IProductRepository repository) {
         ICart cart = new Cart();
