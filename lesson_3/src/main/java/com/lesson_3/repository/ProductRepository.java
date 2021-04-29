@@ -12,9 +12,9 @@ public class ProductRepository {
     private static final List<Product> products;
     static {
         products = new CopyOnWriteArrayList<>();
-        products.add(new Product(0, "Bread", 50));
-        products.add(new Product(1, "Beer", 70));
-        products.add(new Product(2, "Lemonade", 45));
+        products.add(new Product("Bread", 50));
+        products.add(new Product("Beer", 70));
+        products.add(new Product("Lemonade", 45));
     }
     public Product getProduct(long id) {
         if(id < 0) {
